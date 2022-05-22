@@ -1,4 +1,5 @@
 const querystring = require("querystring");
+const axios = require("axios").default;
 
 const handler = async (event) => {
   try {
@@ -11,15 +12,14 @@ const handler = async (event) => {
       params.filterByFormula = 'Status = "On Duty"';
     }
 
-    const res = await fetch(
+    const response = await axios.get(
       `https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?` +
         new querystring.stringify(params),
       { headers: { Authorization: "Bearer " + process.env.AIRTABLE_API_TOKEN } }
     );
-    const json = await res.json();
 
     var crew = [];
-    for (var officer of json.records) {
+    for (var officer of response.records) {
       crew.push({
         id: officer.id,
         name: officer.fields.Name,
