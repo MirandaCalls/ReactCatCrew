@@ -19,7 +19,7 @@ const handler = async (event) => {
     );
 
     var crew = [];
-    for (var officer of response.records) {
+    for (var officer of response.data.records) {
       crew.push({
         id: officer.id,
         name: officer.fields.Name,
