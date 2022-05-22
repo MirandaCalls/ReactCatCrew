@@ -8,6 +8,7 @@ const handler = async (event) => {
     };
 
     const onlyShowOnDuty = event.queryStringParameters.onlyShowOnDuty || false;
+    console.log(onlyShowOnDuty);
     if (onlyShowOnDuty) {
       params.filterByFormula = 'Status = "On Duty"';
     }
