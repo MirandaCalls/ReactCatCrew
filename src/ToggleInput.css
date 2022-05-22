@@ -1,0 +1,35 @@
+.toggle-input-container {
+  display: flex;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0px 10px;
+}
+
+.toggle-input-container:focus {
+  border: 1px solid black;
+}
+
+.toggle-input {
+  border: 1px solid black;
+  width: 45px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: rgb(228, 228, 228);
+}
+
+.toggle-input--enabled {
+  background-color: rgb(2, 180, 2);
+}
+
+.toggle-input__knob {
+  background: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  box-shadow: 2px 0px rgba(1, 1, 1, 0.4);
+}
+
+.toggle-input--enabled .toggle-input__knob {
+  margin-left: auto;
+  box-shadow: -2px 0px rgba(1, 1, 1, 0.4);
+}

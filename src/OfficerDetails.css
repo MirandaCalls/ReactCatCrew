@@ -1,0 +1,58 @@
+.officer-card {
+  box-sizing: border-box;
+  width: 500px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  padding: 20px;
+  justify-self: center;
+  background-color: #bbe6ff;
+}
+
+.officer-img-container {
+  display: inline-block;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.officer-img-container img {
+  border-radius: 10px;
+  width: 200px;
+}
+
+.officer-details {
+  display: inline-block;
+  width: 50%;
+}
+
+.officer-details h2 {
+  font-family: "Audiowide", cursive;
+}
+
+.officer-info-label {
+  border-bottom: 2px solid black;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.division-badge {
+  color: white;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px #00000026 !important;
+  margin-bottom: 5px;
+}
+
+.division-badge.command {
+  background-color: gold;
+}
+
+.division-badge.operations {
+  background-color: red;
+}
+
+.division-badge.science {
+  background-color: blue;
+}

@@ -1,0 +1,11 @@
+p {
+  font-family: "Varela", sans-serif;
+  font-size: 16px;
+  margin: 4px;
+}
+
+body {
+  margin: 0px;
+  background-image: url("space.jpeg");
+  background-repeat: repeat;
+}

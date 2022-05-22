@@ -1,0 +1,10 @@
+.grid-controls-bar {
+  background-color: #bbe6ff;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.grid-controls-bar__container {
+  max-width: 1020px;
+  margin: 0px auto;
+}

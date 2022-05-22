@@ -1,0 +1,14 @@
+.officer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  max-width: 1020px;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 1020px) {
+  .officer-grid {
+    grid-template-columns: 1fr;
+  }
+}
