@@ -1,17 +1,49 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
+const querystring = require("querystring");
+
 const handler = async (event) => {
   try {
-    const subject = event.queryStringParameters.name || 'World'
+    let params = {
+      view: "Grid view",
+    };
+
+    const onlyShowOnDuty = event.queryStringParameters.onlyShowOnDuty || false;
+    if (onlyShowOnDuty) {
+      params.filterByFormula = 'Status = "On Duty"';
+    }
+
+    const res = await fetch(
+      `https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?` +
+        new querystring.stringify(params),
+      { headers: { Authorization: "Bearer " + process.env.AIRTABLE_API_TOKEN } }
+    );
+    const json = await res.json();
+
+    var crew = [];
+    for (var officer of json.records) {
+      crew.push({
+        id: officer.id,
+        name: officer.fields.Name,
+        division: officer.fields.Division,
+        status: officer.fields.Status,
+        dateRecruited: officer.fields["Date Recruited"],
+        origin: officer.fields.Origin,
+        images: {
+          portrait: officer.fields.Image[0].url,
+          thumbnail: officer.fields.Image[0].thumbnails.small.url,
+        },
+      });
+    }
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
+      body: JSON.stringify(crew),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
-    }
+    };
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return { statusCode: 500, body: error.toString() };
   }
-}
+};
 
-module.exports = { handler }
+module.exports = { handler };
