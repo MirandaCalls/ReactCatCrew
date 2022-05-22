@@ -7,9 +7,9 @@ const handler = async (event) => {
       view: "Grid view",
     };
 
-    const onlyShowOnDuty = event.queryStringParameters.onlyShowOnDuty || false;
-    console.log(onlyShowOnDuty);
-    if (onlyShowOnDuty) {
+    const onlyShowOnDuty =
+      event.queryStringParameters.onlyShowOnDuty || "false";
+    if (onlyShowOnDuty == "true") {
       params.filterByFormula = 'Status = "On Duty"';
     }
 
