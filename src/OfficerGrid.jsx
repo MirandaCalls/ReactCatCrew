@@ -8,35 +8,15 @@ const OfficerGrid = ({ onlyShowOnDuty }) => {
   useEffect(() => {
     (async () => {
       let params = {
-        view: "Grid view",
+        onlyShowOnDuty: onlyShowOnDuty,
       };
 
-      if (onlyShowOnDuty) {
-        params.filterByFormula = 'Status = "On Duty"';
-      }
-
       const res = await fetch(
-        `https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?` +
+        `/.netlify/functions/get-crew?` +
           new URLSearchParams(params).toString(),
         { headers: { Authorization: "Bearer " } }
       );
-      const json = await res.json();
-
-      var crew = [];
-      for (var officer of json.records) {
-        crew.push({
-          id: officer.id,
-          name: officer.fields.Name,
-          division: officer.fields.Division,
-          status: officer.fields.Status,
-          dateRecruited: officer.fields["Date Recruited"],
-          origin: officer.fields.Origin,
-          images: {
-            portrait: officer.fields.Image[0].url,
-            thumbnail: officer.fields.Image[0].thumbnails.small.url,
-          },
-        });
-      }
+      const crew = await res.json();
 
       setCrew(crew);
     })();
