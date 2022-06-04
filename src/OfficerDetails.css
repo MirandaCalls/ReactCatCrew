@@ -10,7 +10,6 @@
 }
 
 .officer-img-container {
-  display: inline-block;
   width: 50%;
   display: flex;
   align-items: center;
@@ -19,6 +18,8 @@
 .officer-img-container img {
   border-radius: 10px;
   width: 200px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .officer-details {
@@ -55,4 +56,24 @@
 
 .division-badge.science {
   background-color: blue;
+}
+
+@media screen and (max-width: 550px) {
+  .officer-card {
+    width: calc(100% - 20px);
+    display: block;
+  }
+
+  .officer-img-container {
+    width: 100%;
+  }
+
+  .officer-img-container img {
+    margin: auto;
+  }
+
+  .officer-details {
+    display: block;
+    width: 100%;
+  }
 }

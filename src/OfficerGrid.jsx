@@ -12,9 +12,8 @@ const OfficerGrid = ({ onlyShowOnDuty }) => {
       };
 
       const res = await fetch(
-        `/.netlify/functions/get-crew?` +
-          new URLSearchParams(params).toString(),
-        { headers: { Authorization: "Bearer " } }
+        `https://cat-crew.netlify.app/.netlify/functions/get-crew?` +
+          new URLSearchParams(params).toString()
       );
       const crew = await res.json();
 

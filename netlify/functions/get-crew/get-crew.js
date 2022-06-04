@@ -39,8 +39,10 @@ const handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify(crew),
       // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     };
   } catch (error) {
     return { statusCode: 500, body: error.toString() };

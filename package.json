@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
+    "dev:cat-crew": "netlify functions:serve cat-crew",
     "build": "parcel build src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
@@ -23,6 +24,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "netlify-cli": "^10.3.1",
     "parcel": "^2.5.0",
     "prettier": "^2.6.2"
   },
