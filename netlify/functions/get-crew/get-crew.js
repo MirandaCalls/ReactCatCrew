@@ -24,6 +24,7 @@ const handler = async (event) => {
       crew.push({
         id: officer.id,
         name: officer.fields.Name,
+        crewNumber: officer.fields["Crew Number"],
         division: officer.fields.Division,
         status: officer.fields.Status,
         dateRecruited: officer.fields["Date Recruited"],
