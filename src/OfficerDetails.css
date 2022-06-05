@@ -27,8 +27,20 @@
   width: 50%;
 }
 
-.officer-details h2 {
+.officer-info-title {
+  display: flex;
+  align-items: center;
+}
+
+.officer-details h2,
+.officer-details h4 {
   font-family: "Audiowide", cursive;
+}
+
+.crew-number {
+  font-size: 14px;
+  color: rgb(117, 117, 117);
+  margin-left: 10px;
 }
 
 .officer-info-label {
@@ -42,7 +54,7 @@
   width: fit-content;
   padding: 5px 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 3px #00000026 !important;
+  box-shadow: 0 2px 3px #00000026;
   margin-bottom: 5px;
 }
 

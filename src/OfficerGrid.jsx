@@ -28,6 +28,7 @@ const OfficerGrid = ({ onlyShowOnDuty }) => {
           <OfficerDetails
             key={officer.id}
             name={officer.name}
+            crewNumber={officer.crewNumber}
             division={officer.division}
             status={officer.status}
             dateRecruited={officer.dateRecruited}

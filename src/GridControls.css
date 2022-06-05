@@ -4,6 +4,7 @@
   padding: 10px 0px;
   position: fixed;
   top: 0;
+  box-shadow: 0 2px 3px #00000026;
 }
 
 .grid-controls-bar__container {

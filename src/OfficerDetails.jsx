@@ -2,6 +2,7 @@ import "./OfficerDetails.css";
 
 const OfficerDetails = ({
   name,
+  crewNumber,
   division,
   origin,
   dateRecruited,
@@ -14,7 +15,10 @@ const OfficerDetails = ({
         <img src={image} alt={"Image of " + name} />
       </div>
       <div className="officer-details">
-        <h2>{name}</h2>
+        <div className="officer-info-title">
+          <h2>{name}</h2>
+          <h4 className="crew-number">{crewNumber}</h4>
+        </div>
         <p className={`division-badge ${division.toLowerCase()}`}>{division}</p>
         <p className="officer-info-label">Status</p>
         <p>{status}</p>
