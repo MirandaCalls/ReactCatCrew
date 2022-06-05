@@ -2,9 +2,12 @@
   background-color: #bbe6ff;
   width: 100%;
   padding: 10px 0px;
+  position: fixed;
+  top: 0;
 }
 
 .grid-controls-bar__container {
   max-width: 1020px;
   margin: 0px auto;
+  height: 30px;
 }

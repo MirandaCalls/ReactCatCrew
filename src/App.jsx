@@ -15,7 +15,9 @@ const App = () => {
           setOnlyOnDuty(isOn);
         }}
       />
-      <OfficerGrid onlyShowOnDuty={onlyOnDuty} />
+      <div className="main-content">
+        <OfficerGrid onlyShowOnDuty={onlyOnDuty} />
+      </div>
     </div>
   );
 };
