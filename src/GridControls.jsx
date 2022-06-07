@@ -1,4 +1,5 @@
 import ToggleInput from "./ToggleInput.jsx";
+import SearchInput from "./SearchInput.jsx";
 
 import "./GridControls.css";
 
@@ -11,6 +12,7 @@ const GridControls = ({ onlyOnDuty, onChangeOnlyOnDuty }) => {
           label="On Duty"
           onChange={onChangeOnlyOnDuty}
         />
+        <SearchInput color="#ddf2ff" />
       </div>
     </div>
   );
