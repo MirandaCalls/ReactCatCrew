@@ -1,15 +1,25 @@
 import ToggleInput from "./ToggleInput.jsx";
+import SearchInput from "./SearchInput.jsx";
 
 import "./GridControls.css";
 
-const GridControls = ({ onlyOnDuty, onChangeOnlyOnDuty }) => {
+const GridControls = ({ onlyOnDuty, searchText, onChange }) => {
+  console.log(searchText);
   return (
     <div className="grid-controls-bar">
       <div className="grid-controls-bar__container">
         <ToggleInput
           value={onlyOnDuty}
           label="On Duty"
-          onChange={onChangeOnlyOnDuty}
+          onChange={(isOn) => {
+            onChange(isOn, searchText);
+          }}
+        />
+        <SearchInput
+          color="#ddf2ff"
+          onChange={(text) => {
+            onChange(onlyOnDuty, text);
+          }}
         />
       </div>
     </div>

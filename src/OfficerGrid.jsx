@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import OfficerDetails from "./OfficerDetails.jsx";
 import "./OfficerGrid.css";
 
-const OfficerGrid = ({ onlyShowOnDuty }) => {
+const OfficerGrid = ({ onlyShowOnDuty, searchText }) => {
   const [crew, setCrew] = useState([]);
 
   useEffect(() => {
@@ -11,15 +11,19 @@ const OfficerGrid = ({ onlyShowOnDuty }) => {
         onlyShowOnDuty: onlyShowOnDuty,
       };
 
+      if (searchText.length > 0) {
+        params.search = searchText;
+      }
+
       const res = await fetch(
-        `https://cat-crew.netlify.app/.netlify/functions/get-crew?` +
+        `${process.env.FUNCTIONS_SERVER}/.netlify/functions/get-crew?` +
           new URLSearchParams(params).toString()
       );
       const crew = await res.json();
 
       setCrew(crew);
     })();
-  }, [onlyShowOnDuty]);
+  }, [onlyShowOnDuty, searchText]);
 
   return (
     <div className="officer-grid">

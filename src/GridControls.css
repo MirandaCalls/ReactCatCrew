@@ -11,4 +11,6 @@
   max-width: 1020px;
   margin: 0px auto;
   height: 30px;
+  display: flex;
+  justify-content: space-between;
 }
