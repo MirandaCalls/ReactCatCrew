@@ -2,9 +2,15 @@ import { useState } from "react";
 
 import "./SearchInput.css";
 
-const SearchInput = ({ color }) => {
+const SearchInput = ({ color, onChange }) => {
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const runOnChange = (e) => {
+    const value = e.target.value;
+    setContent(value);
+    onChange(value);
+  };
 
   return (
     <div className="search-input-container">
@@ -16,14 +22,13 @@ const SearchInput = ({ color }) => {
           "background-color": color,
         }}
         placeholder="Search Crew IDs"
-        onChange={(e) => setContent(e.text)}
+        onChange={runOnChange}
       />
       {isLoading ? (
         <div className="loading-spinner"></div>
       ) : (
         <div className="magnifying-glass"></div>
       )}
-      {/**/}
     </div>
   );
 };

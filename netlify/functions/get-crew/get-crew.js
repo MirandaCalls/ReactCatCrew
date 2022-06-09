@@ -7,14 +7,26 @@ const handler = async (event) => {
       view: "Grid view",
     };
 
+    let formulas = [];
     const onlyShowOnDuty =
       event.queryStringParameters.onlyShowOnDuty || "false";
     if (onlyShowOnDuty == "true") {
-      params.filterByFormula = 'Status = "On Duty"';
+      formulas.push('Status = "On Duty"');
+    }
+
+    const search = event.queryStringParameters.search;
+    if (search) {
+      formulas.push('SEARCH("' + search + '",{Crew Number})');
+    }
+
+    if (formulas.length == 2) {
+      params.filterByFormula = `AND(${formulas[0]},${formulas[1]})`;
+    } else if (formulas.length == 1) {
+      params.filterByFormula = formulas[0];
     }
 
     const response = await axios.get(
-      `https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?` +
+      "https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?" +
         querystring.stringify(params),
       { headers: { Authorization: "Bearer " + process.env.AIRTABLE_API_TOKEN } }
     );
@@ -39,7 +51,6 @@ const handler = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify(crew),
-      // // more keys you can return:
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
