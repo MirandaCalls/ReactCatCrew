@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "dev:cat-crew": "netlify functions:serve cat-crew",
+    "dev:get-crew": "netlify functions:serve cat-crew",
     "build": "parcel build src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",

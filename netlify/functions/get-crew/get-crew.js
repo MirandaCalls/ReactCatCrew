@@ -26,7 +26,8 @@ const handler = async (event) => {
     }
 
     const response = await axios.get(
-      "https://api.airtable.com/v0/appdP6n26nxymOzG1/Crew%20List?" +
+      process.env.AIRTABLE_APP_URL +
+        "/Crew%20List?" +
         querystring.stringify(params),
       { headers: { Authorization: "Bearer " + process.env.AIRTABLE_API_TOKEN } }
     );

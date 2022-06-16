@@ -4,7 +4,6 @@ import SearchInput from "./SearchInput.jsx";
 import "./GridControls.css";
 
 const GridControls = ({ onlyOnDuty, searchText, onChange }) => {
-  console.log(searchText);
   return (
     <div className="grid-controls-bar">
       <div className="grid-controls-bar__container">
