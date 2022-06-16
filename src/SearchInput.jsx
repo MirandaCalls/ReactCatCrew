@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import "./SearchInput.css";
 
 const SearchInput = ({ color, onChange }) => {
   const [content, setContent] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const callbackId = useRef(null);
 
   const runOnChange = (e) => {
+    if (callbackId.current) {
+      clearTimeout(callbackId.current);
+      callbackId.current = null;
+    }
+
     const value = e.target.value;
     setContent(value);
-    onChange(value);
+
+    callbackId.current = setTimeout(() => {
+      onChange(value);
+    }, 500);
   };
 
   return (
@@ -24,11 +32,7 @@ const SearchInput = ({ color, onChange }) => {
         placeholder="Search Crew IDs"
         onChange={runOnChange}
       />
-      {isLoading ? (
-        <div className="loading-spinner"></div>
-      ) : (
-        <div className="magnifying-glass"></div>
-      )}
+      <div className="magnifying-glass"></div>
     </div>
   );
 };
