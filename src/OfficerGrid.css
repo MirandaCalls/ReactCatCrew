@@ -8,6 +8,52 @@
   padding: 20px 0px;
 }
 
+.officer-card-placeholder {
+  pointer-events: none;
+  border-radius: 5px;
+  animation-name: loading_fade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  justify-self: center;
+}
+
+@keyframes loading_fade {
+  0% {
+    opacity: 100%;
+  }
+  10% {
+    opacity: 90%;
+  }
+  20% {
+    opacity: 80%;
+  }
+  30% {
+    opacity: 70%;
+  }
+  40% {
+    opacity: 60%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  60% {
+    opacity: 60%;
+  }
+  70% {
+    opacity: 70%;
+  }
+  80% {
+    opacity: 80%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 @media screen and (max-width: 1020px) {
   .officer-grid {
     grid-template-columns: 1fr;
