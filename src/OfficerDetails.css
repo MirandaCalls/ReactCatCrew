@@ -1,12 +1,13 @@
-.officer-card {
-  box-sizing: border-box;
-  width: 500px;
+.officer-card,
+.officer-card-placeholder {
   display: flex;
   border-radius: 5px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  padding: 20px;
   justify-self: center;
+  box-sizing: border-box;
   background-color: #bbe6ff;
+  padding: 20px;
+  width: 500px;
 }
 
 .officer-img-container {
@@ -70,8 +71,82 @@
   background-color: blue;
 }
 
+.officer-card-placeholder {
+  pointer-events: none;
+  border-radius: 5px;
+  animation-name: loading_fade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  justify-self: center;
+}
+
+@keyframes loading_fade {
+  0% {
+    opacity: 100%;
+  }
+  10% {
+    opacity: 90%;
+  }
+  20% {
+    opacity: 80%;
+  }
+  30% {
+    opacity: 70%;
+  }
+  40% {
+    opacity: 60%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  60% {
+    opacity: 60%;
+  }
+  70% {
+    opacity: 70%;
+  }
+  80% {
+    opacity: 80%;
+  }
+  90% {
+    opacity: 90%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.officer-info-title-placeholder {
+  background-color: rgb(69, 69, 69);
+  width: 160px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 20px 0px;
+}
+
+.division-badge-placeholder {
+  width: 70px;
+  height: 21px;
+  border-radius: 5px;
+  background-color: rgb(34, 190, 255);
+}
+
+.text-placeholder {
+  height: 15px;
+  background-color: gray;
+  width: 100px;
+  border-radius: 5px;
+  margin: 10px 4px;
+}
+
+.text-placeholder--long {
+  width: 120px;
+}
+
 @media screen and (max-width: 550px) {
-  .officer-card {
+  .officer-card,
+  .officer-card-placeholder {
     width: calc(100% - 20px);
     display: block;
   }

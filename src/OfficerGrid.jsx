@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import OfficerDetails from "./OfficerDetails.jsx";
-
-import Placeholder from "./OfficerDetailsPlaceholder.png";
 import "./OfficerGrid.css";
 
 const OfficerGrid = ({ onlyShowOnDuty, searchText }) => {
@@ -31,24 +29,9 @@ const OfficerGrid = ({ onlyShowOnDuty, searchText }) => {
     <div className="officer-grid">
       {crew.length > 0
         ? crew.map((officer) => (
-            <OfficerDetails
-              key={officer.id}
-              name={officer.name}
-              crewNumber={officer.crewNumber}
-              division={officer.division}
-              status={officer.status}
-              dateRecruited={officer.dateRecruited}
-              origin={officer.origin}
-              image={officer.images.portrait}
-            />
+            <OfficerDetails officer={officer} key={officer.id} />
           ))
-        : Array(6).fill(
-            <img
-              className="officer-card-placeholder"
-              src={Placeholder}
-              alt="placeholder crew card"
-            />
-          )}
+        : Array(6).fill(<OfficerDetails />)}
     </div>
   );
 };
