@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import OfficerDetails from "./OfficerDetails.jsx";
 import "./OfficerGrid.css";
 
+const divisionConversion = {
+  COMMAND: "CMD",
+  SCIENCE: "SCI",
+  OPERATIONS: "OPS",
+};
+
 const OfficerGrid = ({ onlyShowOnDuty, searchText }) => {
   const [crew, setCrew] = useState([]);
 
@@ -12,7 +18,14 @@ const OfficerGrid = ({ onlyShowOnDuty, searchText }) => {
       };
 
       if (searchText.length > 0) {
-        params.search = searchText;
+        let searchTextConv = searchText.toUpperCase();
+        for (let key in divisionConversion) {
+          if (key.includes(searchTextConv)) {
+            searchTextConv = divisionConversion[key];
+          }
+        }
+
+        params.search = searchTextConv;
       }
 
       const res = await fetch(
