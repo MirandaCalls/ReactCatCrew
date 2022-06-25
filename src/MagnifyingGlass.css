@@ -1,8 +1,7 @@
 .magnifying-glass {
-  position: absolute;
-  top: 6px;
-  left: 6px;
   font-size: 1.5em;
+  left: -2px;
+  top: -2px;
   display: inline-block;
   width: 0.4em;
   box-sizing: content-box;
