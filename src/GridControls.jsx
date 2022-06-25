@@ -3,7 +3,7 @@ import SearchInput from "./SearchInput.jsx";
 
 import "./GridControls.css";
 
-const GridControls = ({ onlyOnDuty, searchText, onChange }) => {
+const GridControls = ({ displayMobile, onlyOnDuty, searchText, onChange }) => {
   return (
     <div className="grid-controls-bar">
       <div className="grid-controls-bar__container">

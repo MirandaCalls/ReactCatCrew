@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import MagnifyingGlass from "./MagnifyingGlass.jsx";
 
 import "./SearchInput.css";
 
@@ -32,7 +33,7 @@ const SearchInput = ({ color, onChange }) => {
         placeholder="Search Crew IDs"
         onChange={runOnChange}
       />
-      <div className="magnifying-glass"></div>
+      <MagnifyingGlass />
     </div>
   );
 };
