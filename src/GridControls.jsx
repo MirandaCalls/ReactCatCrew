@@ -1,6 +1,7 @@
 import ToggleInput from "./ToggleInput.jsx";
 import SearchInput from "./SearchInput.jsx";
-import MagnifyingGlass from "./MagnifyingGlass.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import useWindowWidth from "./useWindowWidth.js";
 
 import "./GridControls.css";
@@ -34,7 +35,12 @@ const GridControls = ({ onlyOnDuty, searchText, onChange }) => {
               cursor: "pointer",
             }}
           >
-            <MagnifyingGlass style />
+            <FontAwesomeIcon
+              icon={solid("magnifying-glass")}
+              style={{
+                width: "16px",
+              }}
+            />
           </div>
         ) : (
           <SearchInput

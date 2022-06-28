@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import MagnifyingGlass from "./MagnifyingGlass.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import "./SearchInput.css";
 
@@ -33,7 +34,10 @@ const SearchInput = ({ color, onChange }) => {
         placeholder="Search Crew IDs"
         onChange={runOnChange}
       />
-      <MagnifyingGlass />
+      <FontAwesomeIcon
+        icon={solid("magnifying-glass")}
+        className="search-input__magnifying-glass"
+      />
     </div>
   );
 };

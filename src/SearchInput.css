@@ -7,8 +7,6 @@
 .search-input {
   box-sizing: border-box;
   text-align: right;
-  top: 0px;
-  left: 0px;
   padding: 5px;
   padding-left: 30px;
   border: 1px solid black;
@@ -19,7 +17,7 @@
   height: inherit;
 }
 
-.search-input-container > .magnifying-glass {
+.search-input-container > .search-input__magnifying-glass {
   position: absolute;
   top: 6px;
   left: 6px;
