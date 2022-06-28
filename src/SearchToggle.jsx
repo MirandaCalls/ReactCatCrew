@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
+import "./SearchToggle.css";
+
 const SearchToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
 
