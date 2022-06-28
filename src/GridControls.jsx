@@ -1,7 +1,6 @@
 import ToggleInput from "./ToggleInput.jsx";
 import SearchInput from "./SearchInput.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import SearchToggle from "./SearchToggle.jsx";
 import useWindowWidth from "./useWindowWidth.js";
 
 import "./GridControls.css";
@@ -22,26 +21,7 @@ const GridControls = ({ onlyOnDuty, searchText, onChange }) => {
           }}
         />
         {displayMobile ? (
-          <div
-            style={{
-              margin: "0px 10px",
-              border: "1px solid black",
-              padding: "8px 8px",
-              display: "flex",
-              "flex-direction": "column",
-              "align-items": "center",
-              "border-radius": "5px",
-              "background-color": "#ddf2ff",
-              cursor: "pointer",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={solid("magnifying-glass")}
-              style={{
-                width: "16px",
-              }}
-            />
-          </div>
+          <SearchToggle />
         ) : (
           <SearchInput
             color="#ddf2ff"
