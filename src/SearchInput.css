@@ -4,6 +4,11 @@
   margin: 0px 10px;
 }
 
+.search-input-container--mobile {
+  width: 100%;
+  margin-right: 0;
+}
+
 .search-input {
   box-sizing: border-box;
   text-align: right;
@@ -12,7 +17,7 @@
   border: 1px solid black;
   border-radius: 5;
   font-size: 16px;
-  width: 200px;
+  width: 100%;
   margin: 0px;
   height: inherit;
 }

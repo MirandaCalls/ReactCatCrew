@@ -4,8 +4,8 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import "./SearchInput.css";
 
-const SearchInput = ({ color, onChange }) => {
-  const [content, setContent] = useState("");
+const SearchInput = ({ initialValue, color, onChange, mobile }) => {
+  const [content, setContent] = useState(initialValue);
   const callbackId = useRef(null);
 
   const runOnChange = (e) => {
@@ -23,7 +23,12 @@ const SearchInput = ({ color, onChange }) => {
   };
 
   return (
-    <div className="search-input-container">
+    <div
+      className={
+        "search-input-container " +
+        (mobile ? "search-input-container--mobile" : "")
+      }
+    >
       <input
         type="text"
         className="search-input"

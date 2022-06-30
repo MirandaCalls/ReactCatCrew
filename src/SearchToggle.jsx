@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import "./SearchToggle.css";
 
-const SearchToggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const SearchToggle = ({ isOpen, onClick }) => {
   return (
-    <div className="search-toggle" onClick={() => setIsOpen(!isOpen)}>
+    <div className="search-toggle" onClick={onClick}>
       {isOpen ? (
         <FontAwesomeIcon
           icon={solid("xmark")}
